@@ -13,20 +13,20 @@ helm repo add gitlab http://charts.gitlab.io/
 helm repo update
 
 #Install repos
-helm install ingress-nginx ingress-nginx/ingress-nginx \
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
      --namespace ingress-nginx \
      --set controller.replicaCount=2 \
      --version 4.0.1
 
-helm install cert-manager jetstack/cert-manager \
+helm upgrade --install cert-manager jetstack/cert-manager \
     --namespace cert-manager \
-    --version v0.14.0 \
+    --version v1.0.1 \
     --set installCRDs=true
 
-helm install gitlab gitlab/gitlab \
+helm upgrade --install gitlab gitlab/gitlab \
      --version 5.2.1
      -n gitlab
 
 kubectl apply -f ../common/
 
-helm install app-test ../app-test/deploy
+helm upgrade --install app-test ../app-test/deploy
