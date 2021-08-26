@@ -27,6 +27,4 @@ helm install gitlab gitlab/gitlab \
      --version 5.2.1
      -n gitlab
 
-kubectl apply -f ../common/deploy/
-
-kubectl apply -f ../app-test/deploy/
+kubectl apply -f ../common/
