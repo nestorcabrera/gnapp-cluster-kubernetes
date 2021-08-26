@@ -28,3 +28,5 @@ helm install gitlab gitlab/gitlab \
      -n gitlab
 
 kubectl apply -f ../common/
+
+helm install app-test ../app-test/deploy
