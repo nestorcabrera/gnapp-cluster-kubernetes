@@ -1,0 +1,11 @@
+namespace: app-test
+domain: test.dev.gasneiva.com
+replicaCount: 1
+
+application:
+  name: hello-app
+  port: 8080
+
+image:
+  repository: gcr.io/google-samples/hello-app
+  tag: 1.0
