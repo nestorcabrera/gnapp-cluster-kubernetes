@@ -24,8 +24,11 @@ helm upgrade --install cert-manager jetstack/cert-manager \
     --set installCRDs=true
 
 helm upgrade --install gitlab gitlab/gitlab \
-     --version 5.2.1
-     -n gitlab
+    --timeout 600s \
+    --set certmanager-issuer.email=nestorcabrera@gasneiva.com \
+    --set gitlab-runner.runners.privileged=true \
+    --version 5.2.1 \
+    --namespace gitlab
 
 kubectl apply -f ../common/
 
