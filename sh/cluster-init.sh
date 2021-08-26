@@ -26,3 +26,5 @@ helm install cert-manager jetstack/cert-manager \
 helm install gitlab gitlab/gitlab \
      --version 5.2.1
      -n gitlab
+
+kubectl apply -f ../common/deploy/
