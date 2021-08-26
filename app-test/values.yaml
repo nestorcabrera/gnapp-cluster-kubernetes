@@ -8,7 +8,7 @@ image:
   repository: gcr.io/google-samples/hello-app
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.0
+  tag: "1.0"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,24 +37,6 @@ securityContext:
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
-service:
-  type: ClusterIP
-  port: 8080
-
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt
-    #kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: test.dev.gasneiva.com
-      paths: []
-  tls:
-    - secretName: test.dev.gasneiva.com-tls
-      hosts:
-        - test.dev.gasneiva.com
 
 resources:
   {}
