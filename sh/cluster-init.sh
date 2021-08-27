@@ -16,15 +16,20 @@ helm repo update
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
      --namespace ingress-nginx \
      --set controller.replicaCount=2 \
-     --version 4.0.1
+     --version 4.0.1   
+     #--set rbac.create=true \
+     #--set controller.service.annotations."kubernetes.io/ingress.global-static-ip-name"="test-dev" \
+     #--set controller.service.loadBalancerIP=34.107.141.150 \
 
 helm upgrade --install cert-manager jetstack/cert-manager \
     --namespace cert-manager \
-    --version v1.0.1 \
+    --version v1.5.3 \
     --set installCRDs=true
 
 helm upgrade --install gitlab gitlab/gitlab \
     --timeout 600s \
+    --set global.hosts.domain=git.dev.gasneiva.com \
+    --set global.hosts.externalIP=35.201.72.51 \
     --set certmanager-issuer.email=nestorcabrera@gasneiva.com \
     --set gitlab-runner.runners.privileged=true \
     --version 5.2.1 \
