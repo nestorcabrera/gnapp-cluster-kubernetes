@@ -38,3 +38,5 @@ helm upgrade --install gitlab gitlab/gitlab \
 kubectl apply -f ../common/
 
 helm upgrade --install app-test ../app-test/
+
+helm upgrade --install sample ../sample/
