@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 3
-domain: sample.dev.gasneiva.com
+domain: sample.gnapp.dev.gasneiva.com
 
 application:
   name: sample-app

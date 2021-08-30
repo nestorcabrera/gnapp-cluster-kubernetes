@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.provider: nginx
     #kubernetes.io/ingress.global-static-ip-name: "test-dev"
     cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/proxy-body-size: "512m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "15"
   name: {{ .Values.application.name }}
   namespace: default
 spec:

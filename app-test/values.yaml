@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 3
-domain: test.dev.gasneiva.com
-ipName: "test-dev-gasneiva-com"
+domain: test.gnapp.dev.gasneiva.com
+ipName: "test-gnapp-dev-gasneiva-com"
 
 application:
   name: hello-app
